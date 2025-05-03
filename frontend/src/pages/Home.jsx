@@ -28,11 +28,16 @@ function Home() {
   const nick = location.state?.nick;
 
   return (
-    <div>
+    <container>
+      <div>
         <h1>SEJA BEM VINDO AO CHAT DA FURIA, {nick}!</h1>
-      <Input type="text" placeholder="Mensagem" />
-      <Botao>Enviar</Botao>
-    </div>
+        <div>Onde tem que aparecer as Mensagem</div>
+        <div>
+          <Input type="text" placeholder="Mensagem" />
+          <Botao>Enviar</Botao>
+        </div>
+      </div>
+    </container>
   );
 }
 

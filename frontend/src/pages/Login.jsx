@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import styled from "styled-components"; 
+import styled from "styled-components";
 
 const Container = styled.div`
   display: flex;
@@ -37,6 +37,12 @@ const Botao = styled.button`
   &:hover {
     background-color: #005fa3;
   }
+  ${({ disabled }) =>
+    disabled &&
+    `
+  background-color: #ccc;
+  cursor: not-allowed;
+`}
 `;
 
 function Login() {
@@ -60,7 +66,9 @@ function Login() {
         onChange={atualizar}
         placeholder="Digite seu nick"
       />
-      <Botao onClick={mandarLogin}>Entrar</Botao>
+      <Botao onClick={mandarLogin} disabled={usuario.trim() === ""}>
+        Entrar
+      </Botao>
     </Container>
   );
 }
