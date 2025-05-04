@@ -38,6 +38,11 @@ function Home() {
   const [lista, setLista] = useState([]);
   const [socket, setSocket] = useState(null);
 
+  const infoBot = [
+    "🛒 Visite a nossa loja oficial: https://www.furia.gg/",
+    "📱 Siga a FURIA nas redes sociais! Instagram: @furiagg",
+  ];
+
   useEffect(() => {
     const newSocket = new WebSocket("ws://localhost:8000");
     setSocket(newSocket);
@@ -47,11 +52,23 @@ function Home() {
     return () => newSocket.close();
   }, []);
 
+  
+
   function mandarMensagem() {
-    if (mensagem.trim() !== "") {
-      socket.send(mensagem);
-      setAtualizaMensagem("");
+    if (!mensagem.trim()) return;
+  
+    if (mensagem.trim() === "/bot.info") {
+      infoBot.forEach((msg) => {
+        setLista((prev) => [...prev, `BOT: ${msg}`]);
+      });
+    } else {
+      if (socket && socket.readyState === WebSocket.OPEN) {
+        socket.send(`${nick}: ${mensagem}`);
+      } else {
+        console.error("WebSocket ainda conectando...");
+      }
     }
+    setAtualizaMensagem(""); 
   }
 
   function atualizar(event) {
