@@ -1,7 +1,9 @@
 # Case Técnico - Chat da FURIA - React + FastAPI
-Projeto desenvolvido como parte do desafio de criar um chat interativo para os fãs do time de CS:GO da FURIA.
----
+
+## Projeto desenvolvido como parte do desafio de criar um chat interativo para os fãs do time de CS:GO da FURIA.
+
 ## Tecnologias Utilizadas
+
 - React.js
 - Styled Components
 - FastAPI
@@ -10,50 +12,59 @@ Projeto desenvolvido como parte do desafio de criar um chat interativo para os f
 
 ## Como Rodar o Projeto
 
-1. *Clone o repositório:*
+1. _Clone o repositório:_
+
 ```bash
 git clone https://github.com/GabrielSobrall/FURIA-CASE1.git
 ```
-  
 
-2. Rodando o Frontend (React)
-Acesse a pasta frontend
-```bash
-cd frontend
-```
-Instale as dependências:
-```bash
-npm install
-```
-Inicie o projeto:
-```bash
-npm start
-```
-O frontend ficará disponível em: *http://localhost:3000*
+2.  Rodando o Backend (FastAPI)
+    Acesse a pasta backend (python)
 
-3. Rodando o Backend (FastAPI)
-Acesse a pasta backend (python)
 ```bash
 cd backend
 ```
+
 (Ative seu ambiente virtual, se estiver usando)
 
 Instale as dependências:
+
 ```bash
 pip install fastapi uvicorn
 ```
+
 Inicie o servidor:
 
 ```bash
 uvicorn API:app --reload
 ```
-O backend ficará disponível em: *http://127.0.0.1:8000*
+
+3. Rodando o Frontend (React)
+   Acesse a pasta frontend
+
+```bash
+cd frontend
+```
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Inicie o projeto:
+
+```bash
+npm start
+```
+
+O frontend ficará disponível em: _http://localhost:3000_
 
 # Comandos do Bot
 
-- /bot.info	Envia links da Loja Oficial, Instagram da FURIA e Transmissão ao Vivo
+- /bot.info Envia links da Loja Oficial, Instagram da FURIA e Transmissão ao Vivo
 
-- /bot.equipe	Mostra informações sobre o time principal de CS:GO
+- /bot.equipe Mostra informações sobre o time principal de CS:GO
 
 Observação: O bot responde apenas a comandos pré-programados.
 
@@ -83,14 +94,16 @@ FURIA-CASE-1/
 └── README.md
 ```
 
-Requisitos
+## Requisitos
+
 - Node.js (recomendado v18+)
 
 - Python 3.10 ou superior
 
 - Navegador moderno (Chrome, Edge, Firefox)
 
-Observações
+## Observações
+
 O frontend e o backend rodam em servidores separados (localhost:3000 e localhost:8000).
 
 A comunicação entre eles é feita via WebSocket.
