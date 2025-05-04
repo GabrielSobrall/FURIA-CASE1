@@ -81,6 +81,7 @@ FURIA-CASE-1/
 ├── package.json
 ├── package-lock.json
 └── README.md
+
 Requisitos
 Node.js (recomendado v18+)
 
