@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 
@@ -26,6 +27,19 @@ const Botao = styled.button`
 function Home() {
   const location = useLocation();
   const nick = location.state?.nick;
+  const [mensagem, setAtualizaMensagem] = useState("");
+  const [lista, setLista] = useState([]);
+  const [socket, setSocket] = useState(null);
+
+  useEffect(() => {
+    const newSocket = new WebSocket("ws//localhost:8080");
+    setSocket(newSocket);
+    
+  }
+
+  function atualizar(event) {
+    setAtualizaMensagem(event.target.value);
+  }
 
   return (
     <container>
@@ -33,7 +47,7 @@ function Home() {
         <h1>SEJA BEM VINDO AO CHAT DA FURIA, {nick}!</h1>
         <div>Onde tem que aparecer as Mensagem</div>
         <div>
-          <Input type="text" placeholder="Mensagem" />
+          <Input type="text" value={mensagem} onChange={atualizar} placeholder="Mensagem" />
           <Botao>Enviar</Botao>
         </div>
       </div>
