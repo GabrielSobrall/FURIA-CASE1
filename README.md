@@ -18,35 +18,35 @@ git clone https://github.com/GabrielSobrall/FURIA-CASE1.git
 
 2. Rodando o Frontend (React)
 Acesse a pasta frontend
-bash
+```bash
 cd frontend
-
+```
 Instale as dependências:
-bash
+```bash
 npm install
-
+```
 Inicie o projeto:
-bash
+```bash
 npm start
-
+```
 O frontend ficará disponível em: *http://localhost:3000*
 
 3. Rodando o Backend (FastAPI)
 Acesse a pasta backend (python)
-bash
+```bash
 cd backend
-
+```
 (Ative seu ambiente virtual, se estiver usando)
 
 Instale as dependências:
-bash
+```bash
 pip install fastapi uvicorn
-
+```
 Inicie o servidor:
 
-bash
+```bash
 uvicorn API:app --reload
-
+```
 O backend ficará disponível em: *http://127.0.0.1:8000*
 
 # Comandos do Bot
@@ -58,7 +58,7 @@ Observação: O bot responde apenas a comandos pré-programados.
 
 ## Estrutura do Projeto
 
-bash
+```bash
 FURIA-CASE-1/
 ├── backend/
 │   ├── API.py
@@ -80,6 +80,7 @@ FURIA-CASE-1/
 ├── package.json
 ├── package-lock.json
 └── README.md
+```
 
 Requisitos
 Node.js (recomendado v18+)
