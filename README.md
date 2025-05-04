@@ -1,14 +1,12 @@
 # Case Técnico - Chat da FURIA - React + FastAPI
 Projeto desenvolvido como parte do desafio de criar um chat interativo para os fãs do time de CS:GO da FURIA.
-
 ---
-
 ## Tecnologias Utilizadas
 - React.js
 - Styled Components
 - FastAPI
 - Uvicorn
--WebSocket
+- WebSocket
 
 ---
 
@@ -35,14 +33,13 @@ npm start
 O frontend ficará disponível em: *http://localhost:3000*
 
 3. Rodando o Backend (FastAPI)
-Acesse a pasta backend
+Acesse a pasta backend (python)
 bash
 cd backend
 
 (Ative seu ambiente virtual, se estiver usando)
 
 Instale as dependências:
-
 bash
 pip install fastapi uvicorn
 
@@ -53,14 +50,15 @@ uvicorn API:app --reload
 
 O backend ficará disponível em: *http://127.0.0.1:8000*
 
-Comandos do Bot
-Comando	Resposta
+# Comandos do Bot
+## Comando	Resposta
 /bot.info	Envia links da Loja Oficial, Instagram da FURIA e Transmissão ao Vivo
 /bot.equipe	Mostra informações sobre o time principal de CS:GO
 
 Observação: O bot responde apenas a comandos pré-programados.
 
 ## Estrutura do Projeto
+
 bash
 FURIA-CASE-1/
 ├── backend/
