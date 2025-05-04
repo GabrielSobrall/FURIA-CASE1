@@ -8,16 +8,13 @@ Projeto desenvolvido como parte do desafio de criar um chat interativo para os f
 - Uvicorn
 - WebSocket
 
----
-
 ## Como Rodar o Projeto
 
 1. *Clone o repositório:*
 
-```bash
-git clone https://github.com/GabrielSobrall/FURIA-CASE1
+ bash
+``` git clone https://github.com/GabrielSobrall/FURIA-CASE1.git ```
 
----
 2. Rodando o Frontend (React)
 Acesse a pasta frontend
 bash
