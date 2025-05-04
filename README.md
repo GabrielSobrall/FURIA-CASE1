@@ -62,7 +62,7 @@ O frontend ficará disponível em: _http://localhost:3000_
 
 # Comandos do Bot
 
-- /bot.info Envia links da Loja Oficial, Instagram da FURIA e Transmissão ao Vivo
+- /bot.info Envia links da Loja Oficial, Instagram da FURIA e Data do próximo jogo 
 
 - /bot.equipe Mostra informações sobre o time principal de CS:GO
 
