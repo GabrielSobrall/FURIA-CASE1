@@ -1,67 +1,58 @@
-Case Técnico - Chat da FURIA - React + FastAPI
+# Case Técnico - Chat da FURIA - React + FastAPI
 Projeto desenvolvido como parte do desafio de criar um chat interativo para os fãs do time de CS:GO da FURIA.
 
-Tecnologias Utilizadas
-React.js
+---
 
-Styled Components
+## Tecnologias Utilizadas
+- React.js
+- Styled Components
+- FastAPI
+- Uvicorn
+-WebSocket
 
-FastAPI
+---
 
-Uvicorn
+## Como Rodar o Projeto
 
-WebSocket (para comunicação em tempo real)
-
-Como Rodar o Projeto
-1. Clone o repositório:
+1. *Clone o repositório:*
 bash
-Copiar
-Editar
 git clone https://github.com/seuusuario/furia-case.git
+
+
 2. Rodando o Frontend (React)
-Acesse a pasta frontend/
+Acesse a pasta frontend
+bash
+cd frontend
 
 Instale as dependências:
-
 bash
-Copiar
-Editar
 npm install
+
 Inicie o projeto:
-
 bash
-Copiar
-Editar
 npm start
-O frontend ficará disponível em:
 
-arduino
-Copiar
-Editar
-http://localhost:3000
+O frontend ficará disponível em: *http://localhost:3000*
+
 3. Rodando o Backend (FastAPI)
-Acesse a pasta backend/
+Acesse a pasta backend
+bash
+cd backend
 
 (Ative seu ambiente virtual, se estiver usando)
 
 Instale as dependências:
 
 bash
-Copiar
-Editar
 pip install fastapi uvicorn
+
 Inicie o servidor:
 
 bash
-Copiar
-Editar
 uvicorn API:app --reload
-O backend ficará disponível em:
 
-cpp
-Copiar
-Editar
-http://127.0.0.1:8000
+O backend ficará disponível em: *http://127.0.0.1:8000*
+
 Comandos do Bot
 Comando	Resposta
 /bot.info	Envia links da Loja Oficial, Instagram da FURIA e Transmissão ao Vivo
@@ -69,10 +60,8 @@ Comando	Resposta
 
 Observação: O bot responde apenas a comandos pré-programados.
 
-Estrutura do Projeto
+## Estrutura do Projeto
 bash
-Copiar
-Editar
 FURIA-CASE-1/
 ├── backend/
 │   ├── API.py
