@@ -11,9 +11,8 @@ Projeto desenvolvido como parte do desafio de criar um chat interativo para os f
 ## Como Rodar o Projeto
 
 1. *Clone o repositório:*
-
- bash
-``` git clone https://github.com/GabrielSobrall/FURIA-CASE1.git ```
+``` bash ```
+ git clone https://github.com/GabrielSobrall/FURIA-CASE1.git 
 
 2. Rodando o Frontend (React)
 Acesse a pasta frontend
