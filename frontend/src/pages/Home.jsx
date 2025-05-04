@@ -34,8 +34,12 @@ function Home() {
   useEffect(() => {
     const newSocket = new WebSocket("ws//localhost:8080");
     setSocket(newSocket);
-    
-  }
+    newSocket.onmessage = (event) =>{
+      setLista((prevListas)=>[...prevListas, event.data]);
+    };
+    return() => newSocket.close();
+
+  },[])
 
   function atualizar(event) {
     setAtualizaMensagem(event.target.value);
