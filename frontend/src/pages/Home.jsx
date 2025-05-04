@@ -11,7 +11,7 @@ const Container = styled.div`
   min-height: 100vh;
 `;
 
-const ChatBox = styled.div`
+const ChatLista = styled.div`
   background: white;
   width: 400px;
   height: 400px;
@@ -68,14 +68,9 @@ function Home() {
   ];
 
   const equipeBot = [
-    "TITULARES:",
-    "MOLODOY, YEKINDAR, FalleN, KSCERATO e yuurih",
-    "///",
-    "RESERVAS:",
-    "skullz e chelo",
-    "///",
-    "COACH:",
-    "sidde e Hepa",
+    "TITULARES: MOLODOY, YEKINDAR, FalleN, KSCERATO e yuurih",
+    "RESERVAS: skullz e chelo",
+    "COACH: sidde e Hepa",
   ];
 
   useEffect(() => {
@@ -115,11 +110,11 @@ function Home() {
   return (
     <Container>
       <h1>SEJA BEM-VINDO AO CHAT DA FURIA, {nick}!</h1>
-      <ChatBox>
+      <ChatLista>
         {lista.map((msg, index) => (
           <Message key={index}>{msg}</Message>
         ))}
-      </ChatBox>
+      </ChatLista>
       <div>
         <Input
           type="text"
