@@ -2,6 +2,13 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+`;
+
 const Input = styled.input`
   padding: 10px;
   margin-bottom: 15px;
@@ -32,30 +39,45 @@ function Home() {
   const [socket, setSocket] = useState(null);
 
   useEffect(() => {
-    const newSocket = new WebSocket("ws//localhost:8080");
+    const newSocket = new WebSocket("ws://localhost:8000");
     setSocket(newSocket);
-    newSocket.onmessage = (event) =>{
-      setLista((prevListas)=>[...prevListas, event.data]);
+    newSocket.onmessage = (event) => {
+      setLista((prevListas) => [...prevListas, event.data]);
     };
-    return() => newSocket.close();
+    return () => newSocket.close();
+  }, []);
 
-  },[])
+  function mandarMensagem() {
+    if (mensagem.trim() !== "") {
+      socket.send(mensagem);
+      setAtualizaMensagem("");
+    }
+  }
 
   function atualizar(event) {
     setAtualizaMensagem(event.target.value);
   }
 
   return (
-    <container>
+    <Container>
       <div>
         <h1>SEJA BEM VINDO AO CHAT DA FURIA, {nick}!</h1>
-        <div>Onde tem que aparecer as Mensagem</div>
         <div>
-          <Input type="text" value={mensagem} onChange={atualizar} placeholder="Mensagem" />
-          <Botao>Enviar</Botao>
+          {lista.map((msg, index) => (
+            <div key={index}>{msg}</div>
+          ))}
+        </div>
+        <div>
+          <Input
+            type="text"
+            value={mensagem}
+            onChange={atualizar}
+            placeholder="Mensagem"
+          />
+          <Botao onClick={mandarMensagem}>Enviar</Botao>
         </div>
       </div>
-    </container>
+    </Container>
   );
 }
 
