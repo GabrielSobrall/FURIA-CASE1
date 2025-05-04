@@ -50,9 +50,10 @@ uvicorn API:app --reload
 O backend ficará disponível em: *http://127.0.0.1:8000*
 
 # Comandos do Bot
-## Comando	Resposta
-/bot.info	Envia links da Loja Oficial, Instagram da FURIA e Transmissão ao Vivo
-/bot.equipe	Mostra informações sobre o time principal de CS:GO
+
+- /bot.info	Envia links da Loja Oficial, Instagram da FURIA e Transmissão ao Vivo
+
+- /bot.equipe	Mostra informações sobre o time principal de CS:GO
 
 Observação: O bot responde apenas a comandos pré-programados.
 
@@ -83,11 +84,11 @@ FURIA-CASE-1/
 ```
 
 Requisitos
-Node.js (recomendado v18+)
+- Node.js (recomendado v18+)
 
-Python 3.10 ou superior
+- Python 3.10 ou superior
 
-Navegador moderno (Chrome, Edge, Firefox)
+- Navegador moderno (Chrome, Edge, Firefox)
 
 Observações
 O frontend e o backend rodam em servidores separados (localhost:3000 e localhost:8000).
