@@ -13,8 +13,8 @@ Projeto desenvolvido como parte do desafio de criar um chat interativo para os f
 ## Como Rodar o Projeto
 
 1. *Clone o repositório:*
-bash
-git clone https://github.com/seuusuario/furia-case.git
+``` bash
+git clone https://github.com/seuusuario/furia-case.git ```
 
 
 2. Rodando o Frontend (React)
