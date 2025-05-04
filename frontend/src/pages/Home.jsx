@@ -7,16 +7,39 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+`;
+
+const ChatBox = styled.div`
+  background: white;
+  width: 400px;
+  height: 400px;
+  border: 2px solid #0077cc;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+  overflow-y: auto;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+`;
+
+const Message = styled.div`
+  margin-bottom: 10px;
+  padding: 8px;
+  background-color: #eef6fd;
+  border-radius: 5px;
+  font-size: 14px;
 `;
 
 const Input = styled.input`
   padding: 10px;
-  margin-bottom: 15px;
+  margin-right: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 300px;
+  width: 250px;
   font-size: 16px;
 `;
+
 const Botao = styled.button`
   padding: 10px 20px;
   background-color: #0077cc;
@@ -41,6 +64,18 @@ function Home() {
   const infoBot = [
     "🛒 Visite a nossa loja oficial: https://www.furia.gg/",
     "📱 Siga a FURIA nas redes sociais! Instagram: @furiagg",
+    "🎯 Próxima partida: FURIA x The Mongolz — Sábado, 10 de maio de 2025, às 5h00 (AM)",
+  ];
+
+  const equipeBot = [
+    "TITULARES:",
+    "MOLODOY, YEKINDAR, FalleN, KSCERATO e yuurih",
+    "///",
+    "RESERVAS:",
+    "skullz e chelo",
+    "///",
+    "COACH:",
+    "sidde e Hepa",
   ];
 
   useEffect(() => {
@@ -52,13 +87,15 @@ function Home() {
     return () => newSocket.close();
   }, []);
 
-  
-
   function mandarMensagem() {
     if (!mensagem.trim()) return;
-  
+
     if (mensagem.trim() === "/bot.info") {
       infoBot.forEach((msg) => {
+        setLista((prev) => [...prev, `BOT: ${msg}`]);
+      });
+    } else if (mensagem.trim() === "/bot.equipe") {
+      equipeBot.forEach((msg) => {
         setLista((prev) => [...prev, `BOT: ${msg}`]);
       });
     } else {
@@ -68,7 +105,7 @@ function Home() {
         console.error("WebSocket ainda conectando...");
       }
     }
-    setAtualizaMensagem(""); 
+    setAtualizaMensagem("");
   }
 
   function atualizar(event) {
@@ -77,22 +114,20 @@ function Home() {
 
   return (
     <Container>
+      <h1>SEJA BEM-VINDO AO CHAT DA FURIA, {nick}!</h1>
+      <ChatBox>
+        {lista.map((msg, index) => (
+          <Message key={index}>{msg}</Message>
+        ))}
+      </ChatBox>
       <div>
-        <h1>SEJA BEM VINDO AO CHAT DA FURIA, {nick}!</h1>
-        <div>
-          {lista.map((msg, index) => (
-            <div key={index}>{msg}</div>
-          ))}
-        </div>
-        <div>
-          <Input
-            type="text"
-            value={mensagem}
-            onChange={atualizar}
-            placeholder="Mensagem"
-          />
-          <Botao onClick={mandarMensagem}>Enviar</Botao>
-        </div>
+        <Input
+          type="text"
+          value={mensagem}
+          onChange={atualizar}
+          placeholder="Digite sua mensagem..."
+        />
+        <Botao onClick={mandarMensagem}>Enviar</Botao>
       </div>
     </Container>
   );

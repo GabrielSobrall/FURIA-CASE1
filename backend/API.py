@@ -1,36 +1,38 @@
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect
-from fastapi.middleware.cors import CORSMiddleware
+from fastapi import FastAPI, WebSocket
+import asyncio
+import random
 
 app = FastAPI()
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+conexoes = []
 
-
-mensagens = []
-
-
-conexoes_ativas = []
+usuarios_fake = ["G0dAWP", "Aline75", "LOBOzinh0", "$oneca", "Spider007"]
+mensagens_fake = ["E aí, galera!", "Vamos jogar!", "Que partida insana!", "Alguém online?", "Boa noite, pessoal!","Quem vem x1?","VAMOS FURIA!"]
 
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()
-    conexoes_ativas.append(websocket)
-
- 
-    for msg in mensagens:
-        await websocket.send_text(msg)
+    conexoes.append(websocket)
 
     try:
         while True:
             data = await websocket.receive_text()
-            mensagens.append(data)  
-            for conexao in conexoes_ativas:
-                await conexao.send_text(data)
-    except WebSocketDisconnect:
-        conexoes_ativas.remove(websocket)
+            
+            for conn in conexoes:
+                await conn.send_text(data)
+    except:
+        conexoes.remove(websocket)
+
+async def enviar_mensagens_aleatorias():
+    while True:
+        await asyncio.sleep(random.randint(15, 30)) 
+        if conexoes:  
+            usuario = random.choice(usuarios_fake)
+            mensagem = random.choice(mensagens_fake)
+            texto = f"{usuario}: {mensagem}"
+            for conn in conexoes:
+                await conn.send_text(texto)
+
+@app.on_event("startup")
+async def startup_event():
+    asyncio.create_task(enviar_mensagens_aleatorias())
