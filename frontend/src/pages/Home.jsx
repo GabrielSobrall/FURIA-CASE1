@@ -74,7 +74,7 @@ function Home() {
   ];
 
   useEffect(() => {
-    const newSocket = new WebSocket("wss://meu-chat-furia.onrender.com/ws");
+    const newSocket = new WebSocket("ws://localhost:8000/ws");
     setSocket(newSocket);
     newSocket.onmessage = (event) => {
       setLista((prevListas) => [...prevListas, event.data]);
