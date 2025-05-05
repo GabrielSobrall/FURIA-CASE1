@@ -10,7 +10,7 @@ conexoes = []
 usuarios_fake = ["G0dAWP", "Aline75", "LOBOzinh0", "$oneca", "Spider007"]
 mensagens_fake = ["E aí, galera!", "Vamos jogar!", "Que partida insana!", "Alguém online?", "Boa noite, pessoal!", "Quem vem x1?", "VAMOS FURIA!"]
 
-@app.get("/", response_class=HTMLResponse)
+@app.api_route("/", methods=["GET", "HEAD"], response_class=HTMLResponse)
 async def root():
     return """
     <html>
