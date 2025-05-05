@@ -12,6 +12,8 @@
 
 ## Como Rodar o Projeto
 
+0. INSTALE O PYTHON: *https://www.python.org/downloads/*
+
 
 1. _Clone o repositório:_
 
