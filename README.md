@@ -12,6 +12,7 @@
 
 ## Como Rodar o Projeto
 
+
 1. _Clone o repositório:_
 
 ```bash
@@ -28,6 +29,13 @@ cd backend
 (Ative seu ambiente virtual, se estiver usando)
 
 Instale as dependências:
+
+```bash
+pip install websockets
+```
+```bash
+pip install "uvicorn[standard]"
+```
 
 ```bash
 pip install fastapi uvicorn
