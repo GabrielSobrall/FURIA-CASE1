@@ -39,10 +39,6 @@ pip install websockets
 pip install "uvicorn[standard]"
 ```
 
-```bash
-pip install fastapi uvicorn
-```
-
 Inicie o servidor:
 
 ```bash
